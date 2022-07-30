@@ -16,6 +16,9 @@
 
     /* icons */
     --team-icon-collor: #afb1b8;
+
+    /* Анімація */
+    --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Body */
 
@@ -112,6 +115,7 @@ height: 50px;
     border: none;
     border-radius: 4px;
     padding: 6px 20px;
+    transition: color var(--animation), background-color var(--animation), box-shadow var(--animation);
 }
 
 .pf-btn:hover,
@@ -139,6 +143,18 @@ height: 50px;
     }
 
 /* Header */
+.header {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
+}
+
+.header.no-transparency {
+  background-color: var(--white-bg-cl);
+  backdrop-filter: blur(4px);
+
+}
 
 .header-container {
     display: flex;
@@ -157,6 +173,7 @@ height: 50px;
 .logo {
     margin-right: 93px;
 }
+
 
 .header-nav {
     margin-right: auto;
@@ -177,6 +194,7 @@ height: 50px;
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     color: #212121;
+    transition: color var(--animation);
     /* padding-top: 52px;
     padding-bottom: 52px; */
 }
@@ -187,7 +205,20 @@ height: 50px;
 }
 
 .header-link-current {
+  position: relative;
     color: var(--acent-txt-cl)
+}
+
+.header-link-current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -32px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--acent-txt-cl);
 }
 
 .contact-link {
@@ -200,6 +231,7 @@ height: 50px;
     display: flex;
     text-align: center;
     align-items: center;
+    transition: color var(--animation);
 
 }
 
@@ -230,9 +262,9 @@ height: 50px;
     padding-bottom: 200px;
     background-color: var(--darkgrey-bg-cl);
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)),
-    url(../images/hero/hero_img.png) ; 
+    url(../images/hero/hero_img.png) ;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:bottom;
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
@@ -309,6 +341,34 @@ font-size: 36px;
 line-height: calc(42 /36);
 letter-spacing: 0.03em;
 text-align: center;
+}
+
+.about-item {
+  position: relative
+}
+
+.about-overlay {
+  background-color: rgba(47, 48, 58, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 370px;
+  height: 70px;
+}
+
+.about-discription {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
 }
 
 /* section team */
@@ -394,6 +454,7 @@ margin-bottom: 16px;
     border: 1px solid var(--team-icon-collor);
     border-radius: 4px;
     color: var(--team-icon-collor);
+    transition: color var(--animation),border var(--animation);
   }
   .customer-link:hover,
   .customer-link:focus {
@@ -404,6 +465,7 @@ margin-bottom: 16px;
     fill: var(--team-icon-collor);
     width: 106px;
     height: 60px;
+    transition: fill var(--animation);
   }
 
   .customer-link:hover .customer-icon {
@@ -486,10 +548,10 @@ color: rgba(255, 255, 255, 0.6);
 }
 .portfolio-list {
   flex-basis: calc((100% - 30px * 2) / 3);
+  transition: box-shadow var(--animation);
 }
 .portfolio-list:hover {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-}
 }
 .description {
   font-weight: 400;
@@ -498,6 +560,44 @@ color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.03em;
   color: #757575;
 }
+
+.portfolio-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-description {
+  position: absolute;
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform var(--animation);
+}
+.portfolio-list:hover .portfolio-description,
+.portfolio-list:focus .portfolio-description {
+  transform: translateY(0);
+}
+.portfolio-list:hover,
+.portfolio-list:focus {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
 
 /* Socials icons*/
 .social-icon {
@@ -519,6 +619,7 @@ color: rgba(255, 255, 255, 0.6);
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    transition: background-color var(--animation);
       }
 
   .icon-link:hover,
@@ -527,6 +628,7 @@ color: rgba(255, 255, 255, 0.6);
   }
   .team-icon-list {
     fill: var(--team-icon-collor);
+    transition: fill var(--animation);
   }
   .icon-link:hover .team-icon-list {
     fill: var(--white-bg-cl);
@@ -585,6 +687,7 @@ color: #FFFFFF;
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color var(--animation);
   }
   
   .footer-link:hover,
@@ -595,6 +698,59 @@ color: #FFFFFF;
     fill: var(--white-bg-cl);
   }
   
-/* .footer-container.left {
-    min-width: 231px;
-  } */
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+    transition: opacity var(--animation);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  transition: transform var(--animation);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

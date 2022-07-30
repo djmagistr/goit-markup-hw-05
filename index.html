@@ -26,7 +26,7 @@
   </head>
 
   <body>
-    <header class="header section">
+    <header class="header" data-header>
       <div class="container header-container">
         <!-- navigation -->
         <a class="logo link" href="" lang="en">Web<span class="logo-accent-dark">Studio</span></a>
@@ -68,7 +68,7 @@
       <section class="hero-section section">
         <div class="hero-container container">
           <h1 class="hero-item">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-btn btn" type="button">Заказать услугу</button>
+          <button class="hero-btn btn" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <!-- Section peculiarities -->
@@ -98,10 +98,10 @@
               </p>
             </li>
             <li class="peculiarities-item">
-              <div class="peculiarities-icon-container">             
-                 <svg class="peculiarities-icon" width="70px" height="70px">
+              <div class="peculiarities-icon-container">
+                <svg class="peculiarities-icon" width="70px" height="70px">
                   <use href=".//images/icons.svg#diagram"></use>
-                 </svg>
+                </svg>
               </div>
               <h2 class="peculiarities-title">Планирование</h2>
               <p class="peculiarities-prg">
@@ -129,12 +129,21 @@
           <ul class="about-list list">
             <li class="about-item">
               <img src="./images/about/img.jpg" alt="image1" width="370" height="294" />
+              <div class="about-overlay">
+                <p class="about-discription">Десктопные приложения</p>
+              </div>
             </li>
             <li class="about-item">
               <img src="./images/about/img-1.jpg" alt="image2" width="370" height="294" />
+              <div class="about-overlay">
+                <p class="about-discription">Мобильные приложения</p>
+              </div>
             </li>
             <li class="about-item">
               <img src="./images/about/img-2.jpg" alt="image3" width="370" height="294" />
+              <div class="about-overlay">
+                <p class="about-discription">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -150,7 +159,7 @@
                 <h3 class="team-name">Игорь Демьяненко</h3>
                 <p class="team-position">Product Designer</p>
                 <ul class="social-icon list">
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -163,7 +172,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -176,7 +185,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -189,7 +198,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -211,7 +220,7 @@
                 <h3 class="team-name">Ольга Репина</h3>
                 <p class="team-position">Frontend Developer</p>
                 <ul class="social-icon list">
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -224,7 +233,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -237,7 +246,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -250,7 +259,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -272,7 +281,7 @@
                 <h3 class="team-name">Николай Тарасов</h3>
                 <p class="team-position">Marketing</p>
                 <ul class="social-icon list">
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -285,7 +294,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -298,7 +307,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -311,7 +320,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -333,7 +342,7 @@
                 <h3 class="team-name">Михаил Ермаков</h3>
                 <p class="team-position">UI Designer</p>
                 <ul class="social-icon list">
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -346,7 +355,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -359,7 +368,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -372,7 +381,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="icon-list" >
+                  <li class="icon-list">
                     <a
                       class="icon-link"
                       href=""
@@ -393,8 +402,8 @@
       </section>
       <!-- Section clients -->
       <section class="section section-clients">
-      <div class="container">
-        <h2 class="customer-title">Постоянные клиенты</h2>
+        <div class="container">
+          <h2 class="customer-title">Постоянные клиенты</h2>
           <ul class="customer-list list">
             <li class="customer-item">
               <a href="" class="customer-link">
@@ -440,7 +449,6 @@
             </li>
           </ul>
         </div>
-
       </section>
     </main>
     <!-- Footer -->
@@ -498,5 +506,18 @@
         </div>
       </div>
     </footer>
+    <!-- Modal window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" data-modal-close>
+          <svg class="modal-btn-icon" width="30" height="30">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Java script -->
+    <script src="./js/modal.js"></script>
+    <script src="./js/header-scroll.js"></script>
   </body>
 </html>
