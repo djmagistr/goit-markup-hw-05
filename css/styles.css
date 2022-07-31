@@ -569,12 +569,9 @@ color: rgba(255, 255, 255, 0.6);
 .portfolio-description {
   position: absolute;
   padding: 63px 24px;
-  font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: calc(28 / 18);
   letter-spacing: 0.03em;
-  font-family: 'Roboto';
-  font-style: normal;
   color: white;
   display: flex;
   align-items: center;
@@ -584,20 +581,13 @@ color: rgba(255, 255, 255, 0.6);
   top: 0;
   left: 0;
   background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform var(--animation);
 }
 .portfolio-list:hover .portfolio-description,
 .portfolio-list:focus .portfolio-description {
   transform: translateY(0);
 }
-.portfolio-list:hover,
-.portfolio-list:focus {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-}
-
 
 /* Socials icons*/
 .social-icon {
@@ -652,6 +642,7 @@ color: rgba(255, 255, 255, 0.6);
 
 .footer .container {
     display: flex;
+    align-items: baseline;
 }
 
 .footer-item {
@@ -667,7 +658,6 @@ color: #FFFFFF;
 
 .footer-container-right {
     margin-left: 70px;
-    padding-top: 15px;
 }
 
 .footer-icon {
@@ -740,6 +730,8 @@ transform: translate(-50%,-50%);
 }
 
 .modal-btn {
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 8px;
   right: 8px;
